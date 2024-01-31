@@ -1,0 +1,58 @@
+.Edit-Task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  &,
+  &__BG {
+    z-index: 1000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+
+  &__form-Edit {
+    background-color: var(--finish-color);
+    border-radius: var(--main-border-radius);
+    padding: 20px;
+    width: 50%;
+    z-index: 1100;
+  }
+
+  &__text-area {
+    border-radius: var(--main-border-radius);
+    box-shadow: inset 0px 0px 5px 0px black;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    font-size: 24px;
+    min-height: 200px;
+    max-height: 400px;
+  }
+
+  &__group-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  &__btn {
+    border-radius: var(--main-border-radius);
+    box-shadow: -2px 3px 4px 0px rgba(0, 0, 0, 0.78);
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    font-size: 22px;
+
+    &--edit {
+      background-color: var(--main-color);
+    }
+
+    &--close {
+      background-color: var(--inprog-color);
+    }
+  }
+}

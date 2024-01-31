@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  transition: 0.3s;
+  background-color: wheat;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+:root {
+  --main-color: #08243a;
+  --inprog-color: #f98538;
+  --finish-color: #c69c6c;
+  --main-shadow: -4px 4px 6px 0px rgba(0, 0, 0, 0.78);
+  --main-border-radius: 5px;
+  --main-transition: 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a,
+i {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.Box {
+  background-color: var(--main-color);
+  box-shadow: var(--main-shadow);
+  width: calc(33.3333333333% - 20px);
+  padding: 5px;
+  padding-top: 0;
+  border-radius: 10px;
+}
+@media (max-width: 1200px) {
+  .Box {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+.Box__todos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 100px;
+}
+.Box__msg-drop-here span {
+  animation: dropHere 1s infinite;
+}
+
+@keyframes dropHere {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.Boxs {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 70px 70px;
+}
+@media (max-width: 1200px) {
+  .Boxs {
+    padding: 0 30px 30px;
+  }
+}
+.Boxs__msg-no-task {
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-color);
+  box-shadow: var(--main-shadow);
+  color: white;
+  margin: 30px auto;
+  padding: 10px 20px;
+}
+
+.Edit-Task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.Edit-Task, .Edit-Task__BG {
+  z-index: 1000;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.Edit-Task__form-Edit {
+  background-color: var(--finish-color);
+  border-radius: var(--main-border-radius);
+  padding: 20px;
+  width: 50%;
+  z-index: 1100;
+}
+.Edit-Task__text-area {
+  border-radius: var(--main-border-radius);
+  box-shadow: inset 0px 0px 5px 0px black;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 24px;
+  min-height: 200px;
+  max-height: 400px;
+}
+.Edit-Task__group-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+.Edit-Task__btn {
+  border-radius: var(--main-border-radius);
+  box-shadow: -2px 3px 4px 0px rgba(0, 0, 0, 0.78);
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  font-size: 22px;
+}
+.Edit-Task__btn--edit {
+  background-color: var(--main-color);
+}
+.Edit-Task__btn--close {
+  background-color: var(--inprog-color);
+}
+
+.header {
+  background-color: var(--main-color);
+  box-shadow: var(--main-shadow);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 120px 0 30px;
+}
+@media (max-width: 1200px) {
+  .inputs {
+    margin: 100px 0 20px;
+    padding: 0 30px;
+  }
+}
+.inputs .form {
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-color);
+  box-shadow: var(--main-shadow);
+  display: flex;
+  width: 60%;
+  gap: 10px;
+  padding: 20px;
+}
+@media (max-width: 1200px) {
+  .inputs .form {
+    width: 100%;
+  }
+}
+.inputs .form__input {
+  border-radius: var(--main-border-radius);
+  width: 100%;
+  font-size: 22px;
+  padding: 0 10px;
+  outline: none;
+  border: none;
+}
+.inputs .form__btn {
+  color: var(--main-color);
+  border-radius: var(--main-border-radius);
+  transition: var(--main-transition);
+  background-color: white;
+  padding: 5px 20px;
+  font-size: 30px;
+  border: none;
+}
+.inputs .form__btn:hover {
+  box-shadow: -3px 4px 4px 1px #f98538;
+  transform: translate(3px, -3px);
+}
+
+.ToDo {
+  background-color: var(--main-color);
+  border-radius: var(--main-border-radius);
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: -2px 2px 4px 0px black;
+  padding: 10px;
+  width: 100%;
+  min-height: 80px;
+  font-size: 28px;
+  position: relative;
+}
+.ToDo.finish {
+  text-decoration: line-through;
+  background-color: var(--finish-color);
+}
+.ToDo.inprog {
+  background-color: var(--inprog-color);
+}
+.ToDo:hover {
+  transform: translate(3px, -3px);
+  box-shadow: var(--main-shadow);
+}
+.ToDo__btn {
+  color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: -2px 2px 4px 0px black;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ToDo__btn--delete {
+  font-size: 24px;
+  top: -7px;
+  right: -5px;
+}
+.ToDo__btn--edit {
+  font-size: 18px;
+  top: -7px;
+  left: -5px;
+}/*# sourceMappingURL=App.css.map */

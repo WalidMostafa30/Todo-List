@@ -1,0 +1,53 @@
+.ToDo {
+  background-color: var(--main-color);
+  border-radius: var(--main-border-radius);
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: -2px 2px 4px 0px black;
+  padding: 10px;
+  width: 100%;
+  min-height: 80px;
+  font-size: 28px;
+  position: relative;
+
+  &.finish {
+    text-decoration: line-through;
+    background-color: var(--finish-color);
+  }
+
+  &.inprog {
+    background-color: var(--inprog-color);
+  }
+
+  &:hover {
+    transform: translate(3px, -3px);
+    box-shadow: var(--main-shadow);
+  }
+
+  &__btn {
+    color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: -2px 2px 4px 0px black;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  &__btn--delete {
+    font-size: 24px;
+    top: -7px;
+    right: -5px;
+  }
+
+  &__btn--edit {
+    font-size: 18px;
+    top: -7px;
+    left: -5px;
+  }
+}

@@ -1,0 +1,13 @@
+.header {
+  background-color: var(--main-color);
+  box-shadow: var(--main-shadow);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
