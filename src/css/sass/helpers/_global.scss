@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  transition: 0.3s;
+  background-color: wheat;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+:root {
+  --main-color: #08243a;
+  --inprog-color: #f98538;
+  --finish-color: #c69c6c;
+  --main-shadow: -4px 4px 6px 0px rgba(0, 0, 0, 0.78);
+  --main-border-radius: 5px;
+  --main-transition: 0.3s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a,
+i {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
