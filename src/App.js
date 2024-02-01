@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/App.css";
 import Header from "./components/header/Header";
 import Inputs from "./components/inputs/Inputs";
@@ -7,7 +7,15 @@ import { Toaster } from "react-hot-toast";
 import { data } from "./Data";
 
 const App = () => {
-  const [columns, setColumns] = useState(data);
+  const [columns, setColumns] = useState([]);
+
+  useEffect(() => {
+    if (localStorage.getItem("todo")) {
+      setColumns(JSON.parse(localStorage.getItem("todo")));
+    } else {
+      setColumns(data);
+    }
+  }, []);
 
   function addPostHandler(postdata) {
     const updatedData = [...columns];
@@ -15,6 +23,7 @@ const App = () => {
       ...updatedData[0],
       items: [...updatedData[0].items, postdata],
     };
+    localStorage.setItem("todo", JSON.stringify(updatedData));
     setColumns(updatedData);
   }
 

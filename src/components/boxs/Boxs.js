@@ -26,6 +26,7 @@ export default function Boxs({ columns, setColumns }) {
       destItems.splice(destination.index, 0, removed);
       columns[sourceColumnIndex].items = sourceItems;
       columns[destColumnIndex].items = destItems;
+      localStorage.setItem("todo", JSON.stringify(columns));
       setColumns(columns);
 
       // in same column
@@ -38,6 +39,7 @@ export default function Boxs({ columns, setColumns }) {
       const [removed] = sourceItems.splice(source.index, 1);
       sourceItems.splice(destination.index, 0, removed);
       columns[sourceColumnIndex].items = sourceItems;
+      localStorage.setItem("todo", JSON.stringify(columns));
       setColumns(columns);
     }
   }
@@ -51,6 +53,7 @@ export default function Boxs({ columns, setColumns }) {
           ...updatedData[i],
           items: [...listAfterDelete],
         };
+        localStorage.setItem("todo", JSON.stringify(updatedData));
         setColumns(updatedData);
         toast.success("Task Deleted");
       }

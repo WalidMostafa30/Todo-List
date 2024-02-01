@@ -44,6 +44,7 @@ export default function EditTask({
           ),
         };
       }
+      localStorage.setItem("todo", JSON.stringify(updatedData));
       setColumns(updatedData);
     }
   }
