@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .mainBtn {
+    @apply p-2 rounded-md bg-white border-2 border-mainColor-1 hover:bg-mainColor-1 hover:text-white duration-150  text-xl flex-grow text-center relative;
+  }
+  .mainBtn-span {
+    @apply absolute z-10 top-[-5px] right-[-5px] bg-red-600 text-white w-[25px] h-[25px] flex items-center justify-center rounded-full border-2 border-white;
+  }
+}
+
+:root {
+  --color: #0ea5e9;
+  --color2: #abfccb;
+  --color-hover: #0b6d9b;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color);
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hover);
+}
+
+.active{
+  background-color: var(--color);
+  color: white;
+
+  &:hover{
+    background-color: var(--color-hover);
+    border-color:var(--color-hover) ;
+  }
+}
+
+.finished{
+  background-color: var(--color2);
+  text-decoration: line-through;
+}
+
+body {
+  background: linear-gradient(-45deg, #cc00ff, #00fffa) no-repeat;
+  font-family: sans-serif;
+  height: 100dvh;
+}
